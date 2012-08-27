@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanYuan.Framework", "BanYuan.Framework\source\BanYuan.Framework\BanYuan.Framework.csproj", "{C2826D88-1A5B-4C30-8138-8390012E3759}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanYuan.Framework", "source\BanYuan.Framework\BanYuan.Framework.csproj", "{C2826D88-1A5B-4C30-8138-8390012E3759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanYuan.Utils", "BanYuan.Framework\source\BanYuan.Utils\BanYuan.Utils.csproj", "{168CAD50-B355-48E3-8427-FC9313AE5FAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanYuan.Utils", "source\BanYuan.Utils\BanYuan.Utils.csproj", "{168CAD50-B355-48E3-8427-FC9313AE5FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanYuan.Test", "source\BanYuan.Test\BanYuan.Test.csproj", "{D1A14727-6597-49AF-9B85-AD67B2437D43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{168CAD50-B355-48E3-8427-FC9313AE5FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{168CAD50-B355-48E3-8427-FC9313AE5FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{168CAD50-B355-48E3-8427-FC9313AE5FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A14727-6597-49AF-9B85-AD67B2437D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A14727-6597-49AF-9B85-AD67B2437D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A14727-6597-49AF-9B85-AD67B2437D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A14727-6597-49AF-9B85-AD67B2437D43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
