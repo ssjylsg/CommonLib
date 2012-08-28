@@ -11,6 +11,7 @@ namespace BanYuan.Framework
     public class SystemConfig
     {
         private static SystemConfig _systemConfig;
+        private IExceptionSystem _exceptionSystem;
         public static SystemConfig Init()
         {
             _systemConfig = new SystemConfig();
@@ -41,7 +42,7 @@ namespace BanYuan.Framework
             windsor.AddFacility<Castle.Facilities.FactorySupport.FactorySupportFacility>();
             //基础库注册
             //将web上下文服务注册为默认的上下文服务,HACK:由于过早提供该类，导致无法默认使用threadcontext
-            config.ContextService<WebContextService>();
+            //config.ContextService<WebContextService>();
             //默认的异常体系声明
             windsor.Register(Component
                 .For<IExceptionSystem>()
@@ -52,11 +53,11 @@ namespace BanYuan.Framework
 
             var list = new List<Assembly>();
             //基础程序集
-            list.Add(Assembly.Load("Taobao.Repositories"));
-            list.Add(Assembly.Load("Taobao.Application"));
-            list.Add(Assembly.Load("Taobao.Model"));
+            //list.Add(Assembly.Load("Taobao.Repositories"));
+            //list.Add(Assembly.Load("Taobao.Application"));
+            //list.Add(Assembly.Load("Taobao.Model"));
             if (assemblies != null) list.AddRange(assemblies);
-            list.Distinct();
+            list = list.Distinct().ToList();
             //DDD支持
             windsor.RegisterRepositories(list.ToArray());
             windsor.RegisterServices(list.ToArray(), typeof(ServiceInterceptor));
@@ -65,17 +66,35 @@ namespace BanYuan.Framework
             windsor.RegisterFromInterface(IsFactory, list.ToArray());
             windsor.RegisterFromInterface(IsDao, list.ToArray());
             windsor.RegisterFromInterface(IsSpecial, list.ToArray());
+
         }
+
+        private static bool IsSpecial(Type arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static bool IsDao(Type arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static bool IsFactory(Type arg)
+        {
+            throw new NotImplementedException();
+        }
+
+
         public static SystemConfig Initialize(string app, string versionFlag, Action<WindsorResolver> func, params Assembly[] assemblies)
         {
-           
+
             var assembly = Assembly.GetExecutingAssembly();
             var prefix = "Taobao.BusinessFramework.ConfigFiles.";
             var properties = prefix + "{0}.properties.config";
-      
+
             //初始化
             _systemConfig = new SystemConfig(app, versionFlag);
-         
+            
             return _systemConfig;
         }
         public static SystemConfig Settings

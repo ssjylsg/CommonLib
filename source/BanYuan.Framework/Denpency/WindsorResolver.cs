@@ -41,7 +41,7 @@ namespace BanYuan.Framework.Denpency
 
         public object Resolve(string key)
         {
-            return this._container.Kernel.HasComponent(key) ? this._container.Resolve(key) : null;
+            return this._container.Kernel.HasComponent(key) ? this._container.Resolve<object>(key) : null;
         }
 
         public object Resolve(string key, Type type)
