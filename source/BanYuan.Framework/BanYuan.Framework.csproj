@@ -34,6 +34,9 @@
     <Reference Include="Castle.Core">
       <HintPath>..\..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Facilities.FactorySupport">
+      <HintPath>..\..\packages\Castle.FactorySupportFacility.3.1.0\lib\net40\Castle.Facilities.FactorySupport.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\packages\Castle.Windsor.3.1.0\lib\net40-client\Castle.Windsor.dll</HintPath>
     </Reference>
@@ -61,6 +64,7 @@
     <Compile Include="Domain\IAggregation.cs" />
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\IPage.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IExceptionSystem.cs" />
     <Compile Include="Log\LogManger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
